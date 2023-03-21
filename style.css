@@ -1,0 +1,23 @@
+#container {
+    background-color: #c7c5c5;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    max-width: 1225px;
+    inline-size: auto;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+
+#newsArticle {
+    background-color: #f0efef;
+    padding: 25px;
+    max-width: 500px;
+    margin: 30px;
+    inline-size: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(90, 90, 90);
+    border-radius: 5px;
+}
