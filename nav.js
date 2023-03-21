@@ -14,33 +14,31 @@ export default function nav() {
 
     const logoDiv = document.createElement("div");
     logoDiv.classList.add("logo-div");
+    navbar.appendChild(logoDiv);
 
     const logo = document.createElement("a");
     logo.setAttribute("href", "#");
-    logo.textContent = "Logo";
+    logo.innerHTML = "Logo";
     logo.classList.add("logo");
     logoDiv.appendChild(logo);
 
     const routesDiv = document.createElement("div");
     routesDiv.classList.add("routes-div");
+    navbar.appendChild(routesDiv);
 
-    const linksList = document.createElement("ul");
-    linksList.classList.add("links-list");
+    const linksUL = document.createElement("ul");
+    linksUL.classList.add("links-ul");
+    routesDiv.appendChild(linksUL);
 
     data.items.map((i) => {
-      const route = document.createElement("li");
-      const routeText = document.createElement("a");
-      route.classList.add(`link`);
-      routeText.setAttribute("href", i.url);
-      routeText.textContent = i.title;
-      route.appendChild(routeText);
-      linksList.appendChild(route);
+      const li = document.createElement("li");
+      const liText = document.createElement("a");
+      li.classList.add(`link-${i.slug}`);
+      liText.setAttribute("href", i.url);
+      liText.innerHTML = i.title;
+      li.appendChild(liText);
+      linksUL.appendChild(li);
     });
-
-    routesDiv.appendChild(linksList);
-
-    navbar.appendChild(logoDiv);
-    navbar.appendChild(routesDiv);
   };
   Navbar();
 }
