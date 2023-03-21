@@ -23,7 +23,7 @@ export default function nav() {
     logoDiv.appendChild(logo);
 
     const routesDiv = document.createElement("div");
-    routesDiv.classList.add("routes-div");
+    routesDiv.classList.add("links-div");
     navbar.appendChild(routesDiv);
 
     const linksUL = document.createElement("ul");
@@ -32,9 +32,8 @@ export default function nav() {
 
     data.items.map((i) => {
       const li = document.createElement("li");
-      const liText = document.createElement("a");
+      const liText = document.createElement("button");
       li.classList.add(`link-${i.slug}`);
-      liText.setAttribute("href", i.url);
       liText.innerHTML = i.title;
       li.appendChild(liText);
       linksUL.appendChild(li);

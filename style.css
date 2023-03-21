@@ -54,20 +54,22 @@ body {
   padding: 0;
 }
 
-.links-ul li a {
+.links-ul li button {
   padding: 5px 10px;
 }
 
-.links-ul li a {
+.links-ul li button {
   font-size: 13px;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
   letter-spacing: 2px;
+  outline: inherit;
+  border: none;
+  background-color: transparent;
 }
 
-.links-ul li a:hover {
+.links-ul li button:hover {
   background-color: darkgray;
   border-radius: 30px;
   color: white;
