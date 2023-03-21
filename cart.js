@@ -25,10 +25,17 @@ export const displayCart = () => {
     li.appendChild(div);
     ul.appendChild(li);
   });
-  const button = document.createElement("button");
-  button.textContent = "Go to Checkout";
-  ul.appendChild(button);
-  wrapper.appendChild(ul);
+  if (cart.length > 0) {
+    const button = document.createElement("button");
+    button.textContent = "Go to Checkout";
+    ul.appendChild(button);
+    wrapper.appendChild(ul);
+  } else {
+    const h1 = document.createElement("h1");
+    h1.classList.add("error-cart");
+    h1.textContent = "You have not added anything in cart";
+    wrapper.appendChild(h1);
+  }
 };
 export const addToCart = (product) => {
   const itemExist = cart?.findIndex((item) => item.id == product.id);

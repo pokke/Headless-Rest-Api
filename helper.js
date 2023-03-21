@@ -6,3 +6,9 @@ export const fetchApi = async (endpoint, options = undefined) => {
   return json;
 };
 export const wrapper = document.getElementById("wrapper");
+
+export const pages = {
+  home: "Home",
+  cart: "Cart",
+  shop: "Shop",
+};

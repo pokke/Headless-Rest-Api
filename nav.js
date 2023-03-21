@@ -1,3 +1,8 @@
+import { displayCart } from "./cart.js";
+import { pages } from "./helper.js";
+import news from "./news.js";
+import { displayProductCategories } from "./products.js";
+
 export default function nav() {
   const fetchApi = async (endpoint, options = undefined) => {
     const originURL = "http://64.226.89.57/wp-json";
@@ -35,6 +40,11 @@ export default function nav() {
       const liText = document.createElement("button");
       li.classList.add(`link-${i.slug}`);
       liText.innerHTML = i.title;
+      liText.addEventListener("click", () => {
+        if (i.title == pages.home) news();
+        else if (i.title == pages.cart) displayCart();
+        else if (i.title == pages.shop) displayProductCategories();
+      });
       li.appendChild(liText);
       linksUL.appendChild(li);
     });
