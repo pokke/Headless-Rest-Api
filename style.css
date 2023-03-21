@@ -3,7 +3,9 @@ body {
   padding: 0px;
   margin: 0px;
 }
-
+li {
+  list-style: none;
+}
 #wrapper {
   display: flex;
   justify-content: center;
@@ -73,4 +75,41 @@ body {
   background-color: darkgray;
   border-radius: 30px;
   color: white;
+}
+
+.cart {
+  display: flex;
+  padding: 0;
+}
+.cart-item {
+  border: 1px gray solid;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  min-width: 8rem;
+  width: max-content;
+}
+.cart-item > div > p {
+  margin: 0;
+}
+
+.cart-button {
+  width: 50%;
+  height: 80%;
+  padding: 0;
+  text-align: center;
+}
+.button-section {
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.checkout {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+.form {
+  display: flex;
+  flex-direction: column;
 }

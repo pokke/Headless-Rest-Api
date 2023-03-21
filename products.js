@@ -33,7 +33,7 @@ const displaySingleProduct = (product) => {
   let button = document.createElement("button");
   button.textContent = "Add to Cart";
   button.addEventListener("click", () => {
-    addToCart(product);
+    addToCart(product, cart);
   });
   p.textContent = `${product.price} SEK`;
   let img = document.createElement("img");
