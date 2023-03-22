@@ -5,6 +5,7 @@ export const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 export const displayCart = () => {
   wrapper.innerHTML = "";
+
   const cartWrapper = document.createElement("div");
   cartWrapper.classList.add("cart-wrapper");
   const ul = document.createElement("ul");

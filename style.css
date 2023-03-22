@@ -2,7 +2,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0px;
   margin: 0px;
+  background-color: #03060c;
 }
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 li {
   list-style: none;
 }
@@ -14,11 +21,22 @@ li {
 
 #container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  background-color: #f0f0f0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   padding: 20px;
   margin: 20px 0px;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 #newsArticle {
@@ -26,8 +44,31 @@ li {
   padding: 25px;
   max-width: 500px;
   margin: 30px;
-  border: solid 2px rgb(209, 207, 207);
   border-radius: 30px;
+}
+#newsArticle h2 {
+  padding-bottom: 20px;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+#newsArticle div {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+
+#badge {
+  font-size: 11px;
+  padding: 5px 15px;
+  margin-bottom: 2px;
+  background-color: lightblue;
+  border-radius: 20px;
+  color: black;
+  display: inline-block;
 }
 
 /* NAVBAR */
@@ -36,15 +77,14 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f0f0f0;
-  box-shadow: 0px 1px 5px 1px rgba(184, 184, 184, 0.5);
+  background-color: #03060c;
   padding: 15px 50px;
 }
 
 .logo {
   font-size: 20px;
   font-weight: bold;
-  color: black;
+  color: white;
   text-decoration: none;
   margin-right: 10px;
 }
@@ -62,7 +102,7 @@ li {
 
 .links-ul li button {
   font-size: 13px;
-  color: black;
+  color: white;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -112,4 +152,42 @@ li {
 .form {
   display: flex;
   flex-direction: column;
+}
+
+#hero {
+  color: white;
+  padding: 200px 40px;
+  text-align: center;
+}
+#hero h1 {
+  font-size: 60px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.products img {
+  height: 250px;
+  width: 400px;
+  border-top-left-radius: 20px;
+}
+
+.products button {
+  background-color: white;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.products h2 {
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.products div {
+  padding-bottom: 20px;
 }

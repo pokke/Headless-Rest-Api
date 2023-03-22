@@ -9,6 +9,7 @@ export const wrapper = document.getElementById("wrapper");
 
 export const pages = {
   home: "Home",
+  news: "News",
   cart: "Cart",
   shop: "Shop",
 };

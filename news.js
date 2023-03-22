@@ -20,6 +20,11 @@ export default function news() {
       postElement.setAttribute("id", "newsArticle");
       postElement.classList.add("post");
 
+      const badge = document.createElement("p");
+      badge.id = "badge";
+      badge.textContent = "NEWS ARTICLE";
+      postElement.appendChild(badge);
+
       const titleElement = document.createElement("h2");
       titleElement.textContent = post.title.rendered;
       postElement.appendChild(titleElement);

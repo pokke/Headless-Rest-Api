@@ -15,11 +15,14 @@ const displayProduct = (product, ul) => {
   h2.textContent = product.name;
   div.innerHTML = product.description;
   div.appendChild(p);
-  if (product.images.length > 0) img.src = product.images[0].src;
+  product.images.length > 0
+    ? (img.src = product.images[0].src)
+    : (img.src =
+        "https://user-images.githubusercontent.com/43302778/106805462-7a908400-6645-11eb-958f-cd72b74a17b3.jpg");
 
+  button.appendChild(img);
   button.appendChild(h2);
   button.appendChild(div);
-  button.appendChild(img);
   li.appendChild(button);
   ul.appendChild(li);
 };
@@ -40,6 +43,7 @@ const displaySingleProduct = (product) => {
   h2.textContent = product.name;
   div.innerHTML = product.description;
   div.appendChild(p);
+
   if (product.images.length > 0) img.src = product.images[0].src;
   article.appendChild(h2);
   article.appendChild(div);
