@@ -53,6 +53,7 @@ export const displayCheckout = async () => {
   let totalPriceNumber = 0;
   displayCartProducts(ul, totalPriceNumber);
   const totalPrice = document.createElement("p");
+  totalPrice.classList.add("total-cart");
   totalPrice.textContent = `Your total is ${
     totalPriceNumber + 100
   } SEK, including taxes and shipping`;
