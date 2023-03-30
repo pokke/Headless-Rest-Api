@@ -1,6 +1,7 @@
 import { addToCart, cart, removeFromCart } from "./cart.js";
 import { fetchApi, originURL, wrapper } from "./helper.js";
 import news from "./news.js";
+let totalPriceNumber = 0;
 const displayCartProducts = (ul, totalPriceNumber) => {
   cart?.map((item) => {
     const li = document.createElement("li");
@@ -32,7 +33,8 @@ const displayCartProducts = (ul, totalPriceNumber) => {
     quantity.textContent = `Quantity ${item.quantity}`;
     h2.textContent = item.name;
     p.textContent = `${item.price * item.quantity} SEK`;
-    totalPriceNumber += item.price * item.quantity;
+    increaseTotalPrice(item.price, item.quantity);
+    console.log(totalPriceNumber);
     div.appendChild(p);
     div.appendChild(quantity);
     li.appendChild(h2);
@@ -43,6 +45,9 @@ const displayCartProducts = (ul, totalPriceNumber) => {
     ul.appendChild(li);
   });
 };
+const increaseTotalPrice = (itemPrice, itemQuantity) => {
+  totalPriceNumber += itemPrice * itemQuantity;
+};
 export const displayCheckout = async () => {
   wrapper.innerHTML = "";
   const checkoutWrapper = document.createElement("div");
@@ -50,7 +55,7 @@ export const displayCheckout = async () => {
   const productsWrapper = document.createElement("div");
   productsWrapper.classList.add("products-wrapper");
   const ul = document.createElement("ul");
-  let totalPriceNumber = 0;
+
   displayCartProducts(ul, totalPriceNumber);
   const totalPrice = document.createElement("p");
   totalPrice.textContent = `Your total is ${
@@ -151,10 +156,8 @@ export const displayCheckout = async () => {
       body: JSON.stringify(data),
     });
 
-    console.log(postForm);
     const json = await postForm.json();
     if (json) {
-      /* localStorage.setItem("cart", JSON.stringify([])); */
       localStorage.removeItem("cart");
       cart.splice(0, cart.length);
 
