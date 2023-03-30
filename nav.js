@@ -1,6 +1,8 @@
 import { displayCart } from "./cart.js";
 import { pages } from "./helper.js";
 import news from "./news.js";
+import hero from "./hero.js";
+
 import { displayProductCategories } from "./products.js";
 
 export default function nav() {
@@ -40,8 +42,10 @@ export default function nav() {
       const liText = document.createElement("button");
       li.classList.add(`link-${i.slug}`);
       liText.innerHTML = i.title;
+      console.log(i);
       liText.addEventListener("click", () => {
-        if (i.title == pages.home) news();
+        if (i.title == pages.home) hero();
+        else if (i.title == pages.news) news();
         else if (i.title == pages.cart) displayCart();
         else if (i.title == pages.shop) displayProductCategories();
       });
